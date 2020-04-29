@@ -18,6 +18,8 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
     # permission_classes = [permissions.IsAuthenticated]
+    # authentication_classes = (TokenAuthentication,)
+
 
 def signin(request, format=None):
     return JsonResponse({'data': 'signin method is called'}, status=200)
